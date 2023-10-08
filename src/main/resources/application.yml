@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/rest-jwt-data-flyway
+    username: postgres
+    password: 20012003
+  flyway:
+    url: jdbc:postgresql://localhost:5432/rest-jwt-data-flyway
+    locations: classpath:db/migration
+    user: postgres
+    password: 20012003
+  jpa:
+    hibernate:
+      ddl-auto: 'validate'
+      show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+jwt:
+  password:
+    encoder:
+      secret:
+      iteration:
+      keylength: 256
+
